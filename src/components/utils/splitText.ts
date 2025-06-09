@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
 
 
-import { SplitText } from "gsap-trial/SplitText";
+import { SplitText } from "gsap/SplitText";
 
 interface ParaElement extends HTMLElement {
   anim?: gsap.core.Animation;
