@@ -1,169 +1,145 @@
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
-  useEffect(() => {
-    let translateX = 0;
-
-    function setTranslateX() {
-      const box = document.getElementsByClassName("work-box");
-      const rectLeft = document
-        .querySelector(".work-container")!
-        .getBoundingClientRect().left;
-      const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-      let padding =
-        parseInt(window.getComputedStyle(box[0]).padding || "0") / 2;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+  const projects = [
+    {
+      id: 1,
+      title: "Bangladesh Liberation War Research Center",
+      description: "A platform for exploring verified documents, images, and stories from the Bangladesh Liberation War.",
+      tools: ["Gsap", "TypeScript", "React"],
+      category: "Research Platform",
+      image: "/images/mjgk.png",
+      link: "https://bangladesh-muktijuddho-gobeshona-ke.vercel.app/",
+      video: "mjgk-demo.mp4",
+      color: "#ff6b6b"
+    },
+    {
+      id: 2,
+      title: "Ask Alvi",
+      description: "AI-powered search assistant with advanced natural language processing capabilities.",
+      tools: ["Next.js", "Langchain.js", "Groq", "Cheerio"],
+      category: "AI Assistant",
+      image: "/images/ask-alvi.png",
+      link: "https://ask-alvi-ai.vercel.app/",
+      video: "ask-alvi-demo.mp4",
+      color: "#4ecdc4"
+    },
+    {
+      id: 3,
+      title: "Careplus",
+      description: "Revolutionary telemedicine platform connecting patients with healthcare professionals seamlessly.",
+      tools: ["JavaScript", "TypeScript", "React", "Twilio"],
+      category: "Healthcare",
+      image: "/images/careplus.png",
+      link: "https://careplus-ebon-three.vercel.app/",
+      video: "careplus-demo.mp4",
+      color: "#a8e6cf"
     }
-
-    setTranslateX();
-
-    let timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".work-section",
-        start: "top top",
-        end: `+=${translateX}`,
-        scrub: true,
-        pin: true,
-        id: "work",
-      },
-    });
-
-    timeline.to(".work-flex", {
-      x: -translateX,
-      ease: "none",
-    });
-
-    return () => {
-      timeline.kill();
-      ScrollTrigger.getById("work")?.kill();
-    };
-  }, []);
+  ];
 
   return (
     <div className="work-section" id="work">
-      <div className="work-container section-container">
-        <h2>
-          My <span>Work</span>
-        </h2>
-        
-        <div className="work-flex">
-            <div className="work-box">
-                <div className="work-info">
-                  <div className="work-title">
-                    <h3>1</h3>
-                    <div>
-                      <h4>Bangladesh Liberation War Research Center</h4>
-                      <p>  A platform for exploring verified documents, images, and stories from the Bangladesh Liberation War.</p>
-                    </div>
-                  </div>
-                  <h4>Tools and features</h4>
-                  <p>Gsap, TypeScript, React</p>
-
-                  <a href="https://bangladesh-muktijuddho-gobeshona-ke.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <button className="visit-btn">Visit Project</button>
-                  </a>
-                </div>
-                <WorkImage image="/images/mjgk.png" alt="" />
-              </div>
-            <div className="work-box">
-              <div className="work-info">
-                <div className="work-title">
-                  <h3>2</h3>
-
-                  <div>
-                    <h4>Ask Alvi</h4>
-                    <p>AI-powered search assistant.</p>
-                  </div>
-                </div>
-                <h4>Tools and features</h4>
-                <p>Next.js,Langchain.js,groq,cheerio ,serper</p>
-                <a href="https://ask-alvi-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <button className="visit-btn">Visit Project</button>
-                  </a>
-              </div>
-              <WorkImage image="/images/ask-alvi.png" alt="" />
-            </div>
-            <div className="work-box">
-              <div className="work-info">
-                <div className="work-title">
-                  <h3>3</h3>
-
-                  <div>
-                    <h4>Careplus</h4>
-                    <p>A telemedicine Website</p>
-                  </div>
-                </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Twilio</p>
-                 <a href="https://careplus-ebon-three.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <button className="visit-btn">Visit Project</button>
-                  </a>
-              </div>
-              <WorkImage image="/images/careplus.png" alt="" />
-            </div>
-                        <div className="work-box">
-                <div className="work-info">
-                  <div className="work-title">
-                    <h3>4</h3>
-                    <div>
-                      <h4>Bangladesh Liberation War Research Center</h4>
-                      <p>  A platform for exploring verified documents, images, and stories from the Bangladesh Liberation War.</p>
-                    </div>
-                  </div>
-                  <h4>Tools and features</h4>
-                  <p>Gsap, TypeScript, React</p>
-
-                  <a href="https://bangladesh-muktijuddho-gobeshona-ke.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <button className="visit-btn">Visit Project</button>
-                  </a>
-                </div>
-                <WorkImage image="/images/mjgk.png" alt="" />
-              </div>
-            <div className="work-box">
-              <div className="work-info">
-                <div className="work-title">
-                  <h3>5</h3>
-
-                  <div>
-                    <h4>Ask Alvi</h4>
-                    <p>AI-powered search assistant.</p>
-                  </div>
-                </div>
-                <h4>Tools and features</h4>
-                <p>Next.js,Langchain.js,groq,cheerio ,serper</p>
-                <a href="https://ask-alvi-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <button className="visit-btn">Visit Project</button>
-                  </a>
-              </div>
-              <WorkImage image="/images/ask-alvi.png" alt="" />
-            </div>
-            <div className="work-box">
-              <div className="work-info">
-                <div className="work-title">
-                  <h3>6</h3>
-
-                  <div>
-                    <h4>Careplus</h4>
-                    <p>A telemedicine Website</p>
-                  </div>
-                </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Twilio</p>
-                 <a href="https://careplus-ebon-three.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <button className="visit-btn">Visit Project</button>
-                  </a>
-              </div>
-              <WorkImage image="/images/careplus.png" alt="" />
-            </div>
-
+      <div className="work-container">
+        <div className="work-header">
+          <div className="header-decoration">
+            <div className="floating-orb orb-1"></div>
+            <div className="floating-orb orb-2"></div>
+            <div className="floating-orb orb-3"></div>
+          </div>
+          <h2 className="work-title">
+            <span className="title-line highlighted">Work</span>
+            <span className="title-line">Portfolio</span>
+          </h2>
         </div>
+        
+        <div className="work-showcase">
+          {projects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className={`work-masterpiece ${index % 2 === 1 ? 'reverse' : ''}`}
+              style={{'--accent-color': project.color} as React.CSSProperties}
+            >
+              <div className="masterpiece-visual">
+                <div className="visual-frame">
+                  <div className="frame-glow"></div>
+                  <div className="visual-content">
+                    <WorkImage 
+                      image={project.image} 
+                      alt={project.title}
+                      video={project.video}
+                      link={project.link}
+                    />
+                  </div>
+                  <div className="floating-elements">
+                    <div className="float-element element-1"></div>
+                    <div className="float-element element-2"></div>
+                    <div className="float-element element-3"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="masterpiece-content">
+                <div className="content-inner">
+                  <div className="project-meta">
+                    <span className="project-number">0{project.id}</span>
+                    <span className="project-category">{project.category}</span>
+                  </div>
+                  
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  
+                  <div className="tech-stack">
+                    {project.tools.map((tool, i) => (
+                      <span key={i} className="tech-badge">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="project-actions">
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="action-primary"
+                    >
+                      <span className="action-text action-secondary">Explore Project</span>
+                      <div className="action-icon action-secondary">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2"/>
+                        </svg>
+                      </div>
+                      <div className="action-ripple"></div>
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="content-decoration">
+                  <div className="decoration-line"></div>
+                  <div className="decoration-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="showcase-footer">
+          <div className="footer-glow"></div>
+          <p>More amazing projects coming soon...</p>
+        </div>
+      </div>
+      
+      <div className="ambient-background">
+        <div className="ambient-particle particle-1"></div>
+        <div className="ambient-particle particle-2"></div>
+        <div className="ambient-particle particle-3"></div>
+        <div className="ambient-particle particle-4"></div>
+        <div className="ambient-particle particle-5"></div>
       </div>
     </div>
   );

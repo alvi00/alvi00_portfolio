@@ -24,7 +24,7 @@
   align-items: end;
 }
 .header ul li {
-  margin-left: 0px;
+  margin-left: -20px;
   letter-spacing: 1px;
   color: #ccc;
   font-weight: 600;
