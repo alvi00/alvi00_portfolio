@@ -1,4 +1,4 @@
-import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
+import React, { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";
@@ -13,21 +13,22 @@ import setSplitText from "./utils/splitText";
 const TechStack = lazy(() => import("./TechStack"));
 
 const MainContainer = ({ children }: PropsWithChildren) => {
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
-  );
+  const [isDesktopView, setIsDesktopView] = useState(false);
 
   useEffect(() => {
+    const checkIsDesktop = () => window.innerWidth > 1024;
+
     const resizeHandler = () => {
       setSplitText();
-      setIsDesktopView(window.innerWidth > 1024);
+      setIsDesktopView(checkIsDesktop());
     };
+
+    // Set initial state and split text on mount
     resizeHandler();
+
     window.addEventListener("resize", resizeHandler);
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, [isDesktopView]);
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
 
   return (
     <div className="container-main">
@@ -43,11 +44,12 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <WhatIDo />
             <Career />
             <Work />
-            {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
-                <TechStack />
-              </Suspense>
-            )}
+
+            {/* Show TechStack on all screen sizes now */}
+            <Suspense fallback={<div>Loading....</div>}>
+              <TechStack />
+            </Suspense>
+
             <Contact />
           </div>
         </div>
