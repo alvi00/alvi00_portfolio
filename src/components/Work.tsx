@@ -134,13 +134,7 @@ const Work = () => {
         </div>
       </div>
       
-      <div className="ambient-background">
-        <div className="ambient-particle particle-1"></div>
-        <div className="ambient-particle particle-2"></div>
-        <div className="ambient-particle particle-3"></div>
-        <div className="ambient-particle particle-4"></div>
-        <div className="ambient-particle particle-5"></div>
-      </div>
+     
     </div>
   );
 };
