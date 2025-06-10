@@ -13,7 +13,7 @@
   position: absolute;
   left: -20px;
   bottom: 20px;
-  display: flex; /* ✅ Always visible */
+  display: flex; /* Always visible on all screen sizes */
   flex-direction: column;
   gap: 8px;
   z-index: 999;
@@ -45,7 +45,7 @@
   top: var(--siTop, 50%);
   transform: translate(-50%, -50%);
   display: flex;
-  font-size: 20px; /* Default (mobile-friendly) */
+  font-size: 20px; /* Default for mobile */
   will-change: left, top;
   transition: transform 0.3s ease-out;
 }
@@ -64,18 +64,25 @@
   font-size: 15px;
   line-height: 15px;
   font-weight: 600;
-  color: #5e5e5e;
   cursor: pointer;
-  transition: 0.5s;
   transform-origin: left bottom;
   transform: translateX(100%) rotateZ(-90deg);
+  
+  /* Mobile styles */
+  color: #5e5e5e; /* gray */
+  text-decoration: none;
+}
+
+/* Visited link on mobile is purple — that classic throwback */
+.resume-button:visited {
+  color: purple;
 }
 
 .resume-button:hover {
   color: #fff;
 }
 
-div.resume-button span {
+.resume-button span {
   color: #fff;
   font-size: 17px;
   margin-top: -1px;
@@ -94,7 +101,25 @@ div.resume-button span {
   z-index: 99999;
 }
 
-/* === DESKTOP OVERRIDES (≥ 900px) === */
+/* === Desktop Overrides (≥ 768px) === */
+@media only screen and (min-width: 768px) {
+  .resume-button {
+    transform: none;
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff; /* white on desktop */
+  }
+
+  .resume-button:visited {
+    color: #fff; /* no purple on desktop */
+  }
+  
+  .resume-button:hover {
+    color: #fff;
+  }
+}
+
+/* === Desktop Overrides (≥ 900px) === */
 @media only screen and (min-width: 900px) {
   .social-icons {
     gap: 20px;
@@ -104,20 +129,3 @@ div.resume-button span {
     font-size: 28px;
   }
 }
-
-/* === Tablet/Desktop Resume Styling (≥ 768px) === */
-@media only screen and (min-width: 768px) {
-  .resume-button {
-    transform: none;
-    font-size: 20px;
-    line-height: 20px;
-    color: #fff;
-  }
-
-  div.resume-button span {
-    font-size: 23px;
-    margin-top: -1.5px;
-  }
-}
-
-
