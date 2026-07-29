@@ -41,6 +41,15 @@ a {
 a:hover {
   color: var(--accentColor);
 }
+::selection {
+  background-color: rgba(127, 64, 255, 0.35);
+  color: #fff;
+}
+:focus-visible {
+  outline: 2px solid var(--accentColor);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 main {
   opacity: 1;
   transition: 0.3s;

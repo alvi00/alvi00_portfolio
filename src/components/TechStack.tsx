@@ -4,7 +4,8 @@ import {
   FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3Alt, FaPython,
 } from "react-icons/fa";
 import {
-  SiNextdotjs, SiLangchain, SiTailwindcss, SiTypescript, SiMongodb, SiMysql, SiVercel, SiGithub, SiPostgresql, SiExpress, SiRedux, SiDocker, SiFirebase, SiLinux, SiBun, SiFramer
+  SiNextdotjs, SiLangchain, SiTailwindcss, SiTypescript, SiMongodb, SiMysql, SiVercel, SiGithub, SiPostgresql, SiExpress, SiRedux, SiDocker, SiFirebase, SiLinux, SiBun, SiFramer,
+  SiPytorch, SiTensorflow, SiScikitlearn, SiHuggingface, SiFastapi, SiDjango, SiSelenium, SiPandas, SiNumpy, SiPostman, SiLatex, SiCplusplus, SiOpenjdk
 } from "react-icons/si";
 import { useState } from "react";
 
@@ -31,6 +32,19 @@ const techIcons = [
   { icon: <SiLinux className="text-yellow-500" />, name: "Linux", gradient: "from-yellow-400 to-gray-800" },
   { icon: <SiBun className="text-black dark:text-white" />, name: "Bun", gradient: "from-gray-800 to-gray-900" },
   { icon: <SiFramer className="text-pink-500" />, name: "Framer Motion", gradient: "from-pink-400 to-purple-600" },
+  { icon: <SiPytorch className="text-orange-600" />, name: "PyTorch", gradient: "from-orange-500 to-red-600" },
+  { icon: <SiTensorflow className="text-orange-400" />, name: "TensorFlow", gradient: "from-orange-400 to-amber-600" },
+  { icon: <SiScikitlearn className="text-orange-400" />, name: "Scikit-learn", gradient: "from-amber-400 to-blue-500" },
+  { icon: <SiHuggingface className="text-yellow-400" />, name: "Transformers", gradient: "from-yellow-300 to-amber-500" },
+  { icon: <SiFastapi className="text-teal-500" />, name: "FastAPI", gradient: "from-teal-400 to-emerald-600" },
+  { icon: <SiDjango className="text-green-700" />, name: "Django", gradient: "from-green-600 to-emerald-800" },
+  { icon: <SiSelenium className="text-green-500" />, name: "Selenium", gradient: "from-green-400 to-lime-600" },
+  { icon: <SiPostman className="text-orange-500" />, name: "Postman", gradient: "from-orange-400 to-orange-600" },
+  { icon: <SiPandas className="text-purple-400" />, name: "Pandas", gradient: "from-purple-400 to-indigo-600" },
+  { icon: <SiNumpy className="text-blue-400" />, name: "NumPy", gradient: "from-sky-400 to-blue-600" },
+  { icon: <SiCplusplus className="text-blue-500" />, name: "C++", gradient: "from-blue-500 to-indigo-700" },
+  { icon: <SiOpenjdk className="text-red-500" />, name: "Java", gradient: "from-red-400 to-orange-600" },
+  { icon: <SiLatex className="text-gray-200" />, name: "LaTeX", gradient: "from-gray-400 to-gray-700" },
 ];
 
 export default function TechStack() {

@@ -87,23 +87,19 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
+              <h3>RESEARCH</h3>
               <h4>Description</h4>
               <p>
-                  I build intuitive, scalable apps with clean code and creative logic — if it solves a real problem, I’m on it.
+                  Research assistant at Duke University and NSU’s TriModal AI Lab — I design evaluation protocols, benchmark deep learning architectures, and write the papers. Three published so far.
               </p>
               <h5>Skillset & tools</h5>
                <div className="what-content-flex">
-                  <div className="what-tags">JavaScript</div>
-                  <div className="what-tags">TypeScript</div>
-                  <div className="what-tags">React</div>
-                  <div className="what-tags">Next.js</div>
-                  <div className="what-tags">Node.js</div>
-                  <div className="what-tags">Express</div>
-                  <div className="what-tags">Langchain</div>
-                  <div className="what-tags">MySQL</div>
-                  <div className="what-tags">Redis</div>
-                  <div className="what-tags">Cheerio</div>
+                  <div className="what-tags">PyTorch</div>
+                  <div className="what-tags">Transformers</div>
+                  <div className="what-tags">LLMs</div>
+                  <div className="what-tags">RAG</div>
+                  <div className="what-tags">Benchmarking</div>
+                  <div className="what-tags">LaTeX</div>
                 </div>
 
               <div className="what-arrow"></div>
@@ -128,18 +124,21 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
+              <h3>DEVELOP</h3>
               <h4>Description</h4>
               <p>
-                I bring pixels to life — I blend creativity with precision to craft visuals that move and mean something.
+                I ship full-stack systems around the models — APIs, pipelines, and interfaces with clean code and creative logic. If it solves a real problem, I’m on it.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Unity</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Illustrator</div>
-                <div className="what-tags">Rigging</div>
+                <div className="what-tags">TypeScript</div>
+                <div className="what-tags">React</div>
+                <div className="what-tags">Next.js</div>
+                <div className="what-tags">FastAPI</div>
+                <div className="what-tags">Django</div>
+                <div className="what-tags">Node.js</div>
+                <div className="what-tags">LangChain</div>
+                <div className="what-tags">MongoDB</div>
               </div>
               <div className="what-arrow"></div>
             </div>

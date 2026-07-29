@@ -156,10 +156,13 @@ export function setAllTimeline() {
       { opacity: 1, duration: 0.1 },
       0
     )
+    /* Cards materialize in row order as the spine grows past them. The tween
+       stays on .career-info-box (the wrapper) so the hover lift on the inner
+       .career-card isn't fighting GSAP's inline transform. */
     .fromTo(
       ".career-info-box",
-      { opacity: 0 },
-      { opacity: 1, stagger: 0.1, duration: 0.5 },
+      { opacity: 0, y: 45, scale: 0.97 },
+      { opacity: 1, y: 0, scale: 1, stagger: 0.1, duration: 0.5 },
       0
     )
     .fromTo(
@@ -174,10 +177,13 @@ export function setAllTimeline() {
     );
 
   if (window.innerWidth > 1024) {
+    /* Fixed px, not a percentage. `y: "20%"` scales with the section height, so
+       as the timeline grew the parallax pushed the last card straight through
+       the margin-bottom and under the next section. 150px always clears it. */
     careerTimeline.fromTo(
       ".career-section",
       { y: 0 },
-      { y: "20%", duration: 0.5, delay: 0.2 },
+      { y: 150, duration: 0.5, delay: 0.2 },
       0
     );
   } else {

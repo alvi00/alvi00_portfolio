@@ -9,6 +9,7 @@ import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import Achievements from "./Achievements";
+import Research from "./Research";
 
 import setSplitText from "./utils/splitText";
 
@@ -46,6 +47,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <WhatIDo />
             <Career />
             <Achievements/>
+            <Research />
             <Work />
 
             {/* Show TechStack on all screen sizes now */}

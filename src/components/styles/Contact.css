@@ -1,51 +1,224 @@
 .contact-section {
+  position: relative;
   margin: auto;
-  padding-bottom: 100px;
   margin-top: 100px;
+  padding-bottom: 100px;
 }
+
+.contact-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+.contact-head {
+  margin-bottom: 56px;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(194, 164, 255, 0.28);
+  border-radius: 2rem;
+  margin-bottom: 22px;
+}
+
 .contact-section h3 {
   font-size: 60px;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 0;
+  letter-spacing: -1px;
+  margin: 0 0 18px;
+  background: linear-gradient(135deg, #ffffff 0%, #c2a4ff 60%, #ffffff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.contact-lead {
+  max-width: 32rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #9ca3af;
+}
+
+/* ---------- Columns ---------- */
 .contact-flex {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.contact-flex h4 {
-  font-weight: 500;
-  margin: 0;
-  opacity: 0.6;
-}
+
 .contact-box {
   display: flex;
   flex-direction: column;
 }
+
+.contact-flex h4 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6f6880;
+  opacity: 1;
+  margin: 0;
+}
+
 .contact-flex p {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 8px 0 26px;
 }
+
+.contact-flex .contact-box p:last-of-type {
+  margin-bottom: 0;
+}
+
+.contact-value {
+  position: relative;
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #e7e2ef;
+  transition: color 0.3s ease;
+}
+
+/* Underline that wipes in on hover */
+.contact-value::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: var(--accentColor);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.contact-value:hover {
+  color: var(--accentColor);
+}
+
+a.contact-value:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-static {
+  color: #9ca3af;
+  cursor: default;
+}
+
+.contact-static::after {
+  display: none;
+}
+
+/* ---------- Socials ---------- */
 a.contact-social {
-  font-size: 25px;
-  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #e7e2ef;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  transition: color 0.3s ease, border-color 0.3s ease, padding-left 0.3s ease;
 }
+
+a.contact-social:first-of-type {
+  margin-top: 8px;
+}
+
+a.contact-social svg {
+  font-size: 1.05rem;
+  opacity: 0.45;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+a.contact-social:hover {
+  color: var(--accentColor);
+  border-color: rgba(194, 164, 255, 0.5);
+  padding-left: 8px;
+}
+
+a.contact-social:hover svg {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* ---------- Sign-off column ---------- */
+.contact-sign {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.95rem 1.7rem;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #14091f;
+  background: linear-gradient(135deg, #c2a4ff, #8f7bff);
+  box-shadow: 0 12px 30px rgba(127, 64, 255, 0.28);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s ease;
+}
+
+.contact-cta:hover {
+  color: #14091f;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(127, 64, 255, 0.42);
+}
+
+.contact-cta svg {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-cta:hover svg {
+  transform: translate(3px, -3px);
+}
+
 .contact-box h2 {
   font-weight: 400;
   font-size: 23px;
+  line-height: 1.45;
   margin: 0;
+  color: #b9b2c6;
 }
 .contact-box h2 > span {
   color: var(--accentColor);
+  font-weight: 500;
 }
 .contact-box h5 {
-  font-size: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 1;
   display: flex;
-  gap: 10px;
-  opacity: 0.5;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #6f6880;
+  opacity: 1;
 }
+
+/* ---------- Responsive ---------- */
 @media only screen and (max-width: 1600px) {
   .contact-section h3 {
     font-size: 50px;
@@ -53,10 +226,12 @@ a.contact-social {
   .contact-box h2 {
     font-size: 20px;
   }
+  .contact-value,
   a.contact-social {
-    font-size: 22px;
+    font-size: 1rem;
   }
 }
+
 @media only screen and (max-width: 1300px) {
   .contact-section h3 {
     font-size: 40px;
@@ -64,23 +239,23 @@ a.contact-social {
   .contact-box h2 {
     font-size: 18px;
   }
+  .contact-value,
   a.contact-social {
-    font-size: 20px;
+    font-size: 0.95rem;
   }
-  .contact-flex p {
-    margin-top: 0px;
+  .contact-head {
+    margin-bottom: 42px;
   }
 }
+
 @media only screen and (max-width: 900px) {
   .contact-flex {
-    flex-direction: column;
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding-top: 32px;
   }
   .contact-flex p {
-    margin-bottom: 0px;
-  }
-  .contact-flex h4 {
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .contact-section {
     margin-top: 50px;
@@ -88,5 +263,21 @@ a.contact-social {
   }
   .contact-container {
     width: calc(100% - 25px);
+  }
+  .contact-sign {
+    gap: 22px;
+  }
+  .contact-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-section h3 {
+    font-size: 34px;
+  }
+  .contact-lead {
+    font-size: 0.95rem;
   }
 }

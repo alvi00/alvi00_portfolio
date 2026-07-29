@@ -12,22 +12,24 @@
 .about-me {
   padding: 50px 0px;
   padding-bottom: 0;
-  width: 500px;
+  width: 560px;
   max-width: calc(100% - 15px);
 }
 .about-me h3 {
-  font-size: 25px;
+  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 7px;
   font-weight: 400;
   color: var(--accentColor);
+  margin-bottom: 18px;
 }
 
 .about-me p {
-  font-size: 33px;
-  font-weight: 600;
-  line-height: 36px;
-  letter-spacing: 1px;
+  font-size: 17px;
+  font-weight: 350;
+  line-height: 27px;
+  letter-spacing: 0.3px;
+  color: #cfc8da;
 }
 
 @media only screen and (min-width: 600px) {
@@ -37,7 +39,7 @@
 }
 @media only screen and (min-width: 768px) {
   .about-me {
-    width: 500px;
+    width: 560px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
@@ -56,16 +58,11 @@
   }
   .about-me {
     padding: 0px;
-    width: 50%;
+    width: 46%;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
-  }
-}
-@media only screen and (min-width: 1950px) {
-  .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+    /* clamped so the copy stays readable on small laptops and doesn't balloon on 4K */
+    font-size: clamp(16px, 1.25vw, 1.5rem);
+    line-height: clamp(26px, 2vw, 2.4rem);
   }
 }

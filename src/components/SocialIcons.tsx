@@ -7,7 +7,7 @@ import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
-import { SiLeetcode } from "react-icons/si";
+import { SiGooglescholar, SiLeetcode } from "react-icons/si";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -62,6 +62,14 @@ const SocialIcons = () => {
         <span>
           <a href="https://github.com/alvi00" target="_blank">
             <FaGithub />
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://scholar.google.com/citations?user=BSOq8zAAAAAJ&hl=en"
+            target="_blank"
+          >
+            <SiGooglescholar />
           </a>
         </span>
         <span>
